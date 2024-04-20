@@ -19,8 +19,10 @@ domain-specific responses to complex clinical questions, including a comparative
 Medical imaging with electronic health records using LLaVa
 
 
+![DS_5983_Project_Proposal (2)_page-0001](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/e83deee5-339f-4a42-ba9c-fcf90f85a06a)
+![DS_5983_Project_Proposal (2)_page-0002](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/0e76ef05-104d-4d33-8f81-4aaafec113fb)
+![DS_5983_Project_Proposal (2)_page-0003](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/ecf7a2e4-9e45-48e2-b819-a0f434df409c)
+![DS_5983_Project_Proposal (2)_page-0004![DS_5983_Project_Proposal (2)_page-0005](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/12559f62-e2f3-4bf5-b369-fb593a80da11)
+](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/0b77b892-dd65-4a0e-a355-4b730e0ac09b)
 
-![DS_5983_Project_Proposal 1-1](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/fd2a5a1b-6891-4527-a2de-7fe236152038)
 
-![DS_5983_Project_Proposal 1-2](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/17449001-b353-41d2-85ff-eda483e41c3a)
-![DS_5983_Project_Proposal 1-3](https://github.com/DhruvMiyani/Multimodal-RAG-Based-Clinical-Language-Models/assets/54111873/a44d355d-b2dc-442b-bbf3-c466d8356dd9)
