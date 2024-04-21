@@ -1,4 +1,4 @@
-# Multimodal RAG Based Clinical Language Models
+# RAG on Clinical Data
 
 Project Overview
 
