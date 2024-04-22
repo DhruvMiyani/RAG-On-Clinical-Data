@@ -136,15 +136,6 @@ example_batch = [tokenized_dataset[i] for i in range(8)]  # Adjust range as nece
 collated_batch = data_collator(example_batch)
 print({k: v.shape for k, v in collated_batch.items()})
 
-data_collator = DataCollatorWithPadding(tokenizer=tokenizer, pad_to_multiple_of=None)
-
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_dataset,
-    eval_dataset=eval_dataset,
-    data_collator=data_collator
-)
 
 # Example of inspecting the output of one tokenized example
 example = {'subject_id': '1', 'hadm_id': '100', 'admittime': '2020-01-01', 'observations': 'Patient exhibits symptoms of flu.'}
@@ -157,80 +148,6 @@ collated_batch = data_collator(sample_batch)
 print({k: v.shape for k, v in collated_batch.items()})
 
 data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-
-from transformers import Trainer, TrainingArguments
-
-# Define training arguments
-training_args = TrainingArguments(
-    output_dir='./results',
-    num_train_epochs=1,
-    per_device_train_batch_size=8,
-    evaluation_strategy='epoch',
-    save_strategy='epoch',
-    logging_dir='./logs'
-)
-
-# Initialize the trainer
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_dataset,
-    #eval_dataset=eval_dataset,
-    data_collator=data_collator
-)
-
-# Start training
-trainer.train()
-
-from transformers import Trainer, TrainingArguments
-
-# Setup training arguments
-training_args = TrainingArguments(
-    output_dir='./results',
-    num_train_epochs=3,
-    per_device_train_batch_size=8,
-    evaluation_strategy='epoch'
-)
-
-# Initialize the trainer
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_dataset,
-    eval_dataset=eval_dataset,
-    data_collator=data_collator
-)
-
-# Start training
-trainer.train()
-
-train_dataset
-
-import torch
-
-# If train_dataset is a list of dictionaries:
-for i in range(len(train_dataset)):
-    train_dataset[i]['input_ids'] = torch.tensor([train_dataset[i]['input_ids']], dtype=torch.long)
-    train_dataset[i]['attention_mask'] = torch.tensor([train_dataset[i]['attention_mask']], dtype=torch.long)
-
-
-
-from torch.utils.data import DataLoader
-
-# Assuming train_dataset is a list or similar iterable of dictionaries
-loader = DataLoader(train_dataset, batch_size=8, collate_fn=None)  # No collate_fn if tensors are already properly shaped
-
-# Check the shape of batches
-for batch in loader:
-    print("Batch 'input_ids' shape:", batch['input_ids'].shape)
-    break
-
-# Direct conversion to NumPy array
-input_ids_np = np.array(train_dataset['input_ids'])
-print(input_ids_np)
-print("Shape of the array:", input_ids_np.shape)
-
-
 
 input_ids = input_ids_np.squeeze(0)
 outputs = model(input_ids=input_ids,attention_mask=attention_mask)
@@ -361,5 +278,5 @@ trainer = Trainer(
 # Start training
 trainer.train()
 
-train_dataset
+
 
