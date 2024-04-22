@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-"""eval_rag.ipynb
-
 
 #RAG evaluation is quite hard for me , I refer some documentation online
 
