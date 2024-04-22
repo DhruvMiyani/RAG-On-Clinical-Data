@@ -279,4 +279,57 @@ trainer = Trainer(
 trainer.train()
 
 
+from rouge_score import rouge_scorer
+
+def rouge_scores(references, predictions):
+    scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+
+    # Store the scores in a list
+    scores = []
+
+    for ref, pred in zip(references, predictions):
+        score = scorer.score(ref, pred)
+        scores.append(score)
+
+    return scores
+
+
+references = [
+   "The timestamps for observations containing "C0392747" are as follows:
+
+- 2104-08-05
+- 2104-08-07
+- 2104-08-08
+- 2104-08-08
+- 2104-08-09
+- ...
+- 2194-10-01
+- 2165-04-30
+- 2165-04-30
+- 2165-05-02
+- 2165-05-09"
+]
+predictions = [
+    "
+- 2104-08-08
+- 2104-08-07
+- 2104-08-08
+- ...
+- 2194-10-01
+- 2165-04-30
+- 2165-04-30
+- 2165-05-02
+- 2165-05-09"
+    "
+]
+
+# Calculate ROUGE scores
+rouge_scores = rouge_scores(references, predictions)
+
+# Print the scores
+for score in rouge_scores:
+    print(score)
+
+
+
 
