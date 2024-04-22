@@ -153,3 +153,24 @@ ensemble_qa_ragas_dataset.to_csv("ensemble_qa_ragas_dataset.csv")
 ensemble_qa_result = evaluate_ragas_dataset(ensemble_qa_ragas_dataset)
 
 ensemble_qa_result
+
+
+from rouge_score import rouge_scorer
+
+def calculate_rouge_scores(references, predictions):
+    scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+    scores = []
+    for ref, pred in zip(references, predictions):
+        score = scorer.score(ref, pred)
+        scores.append(score)
+    return scores
+
+# Example usage with dummy data
+references = ["subject_id  hadm_id   timestamp observations 0          12   112213  2104-08-05  C0392747 C0684224 C3273238 C3812171 C0700287 C... 1          12   112213  2104-08-07  C0392747 C0684224 C3273238 C1523018 C0700287  12   112213  2104-08-08  C0181904 C1552822 C0015392 C0450429 C0150369 C..." ]
+
+
+predictions = ["2          12   112213  2104-08-08  C0181904 C1552822 C0015392 C0450429 C0150369 C...3          12   112213  2104-08-08  C0392747 C0684224 C3273238 C0202059 C4050465 C.."]
+
+rouge_scores = calculate_rouge_scores(references, predictions)
+for score in rouge_scores:
+    print(score)
